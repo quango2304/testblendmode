@@ -29,7 +29,7 @@ class BlendModeTest extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("source"),
-            Container(width: 200, height: 200, color: Colors.white,),
+            Container(width: 200, height: 200, color: Colors.red,),
             Text("destination"),
             Image.asset(
               'assets/sample.png',
@@ -52,7 +52,7 @@ class BlendModeTest extends StatelessWidget {
         SizedBox(height: 20),
         Image.asset(
           'assets/sample.png',
-          color: Colors.white,
+          color: Colors.red,
           colorBlendMode: mode,
           width: 200,
           height: 200,
