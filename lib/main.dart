@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
 class BlendModeTest extends StatelessWidget {
   final List<BlendMode> blendModes = BlendMode.values;
-
+  final image = "https://cdn.freebiesupply.com/logos/large/2x/google-icon-logo-png-transparent.png";
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -29,14 +29,20 @@ class BlendModeTest extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("source"),
-            Container(width: 200, height: 200, color: Colors.red,),
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.red,
+            ),
             Text("destination"),
-            Image.asset(
-              'assets/sample.png',
+            Image.network(
+              image,
               width: 200,
               height: 200,
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             ...blendModes.map((mode) => blendModeExample(mode)).toList()
           ],
         ),
@@ -50,8 +56,8 @@ class BlendModeTest extends StatelessWidget {
         SizedBox(height: 20),
         Text(mode.toString()),
         SizedBox(height: 20),
-        Image.asset(
-          'assets/sample.png',
+        Image.network(
+          image,
           color: Colors.red,
           colorBlendMode: mode,
           width: 200,
